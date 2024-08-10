@@ -59,17 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initial filter
   filterItems('all');
 });
-
-
-Email.send({
-  SecureToken: "ff4837a8-2def-4548-8d8e-675b166cfd1c",
-  To: 'hire@arundm.in',
-  From: 'send@arundm.in',
-  Subject: document.getElementById("subject").value,
-  Body: "Name: " + document.getE1ementById("name").value
-    + "<br> Email: " + document.getE1ementById("email").value
-    + "<br> Phone: " + document.getE1ementById("number").value
-    + "<br> Message: " + document.getE1ementById("message").value
-}).then(
-  message => alert(message)
-);

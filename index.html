@@ -556,19 +556,20 @@
   </section>
   <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me</span></h2>
-    <form onsubmit="sendEmail(); reset(); return false;">
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="cf121061-248e-42dc-b5b9-43722289d1d6">
       <div class="input-group">
         <div class="input-box">
-          <input type="text" id="name" placeholder="Name">
-          <input type="email" id="email" placeholder="Email">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
         </div>
         <div class="input-box">
-          <input type="number" id="number" placeholder="Phone Number">
-          <input type="text" id="subject" placeholder="Subject">
+          <input type="number" name="number" placeholder="Phone Number" required>
+          <input type="text" name="sub" placeholder="Subject" required>
         </div>
       </div>
       <div class="input-group-2">
-        <textarea name="" id="message" placeholder="Your Message" cols="30" rows="10"></textarea>
+        <textarea name="message" placeholder="Your Message" cols="30" rows="10" required></textarea>
         <input type="submit" value="Send Message" class="btn">
       </div>
     </form>
