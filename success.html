@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Successful</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            background-color: var(--second-bg-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px var(--main-color);
+            animation: slideIn 1s ease-out;
+        }
+
+        h1 {
+            color: #4caf50;
+            font-size: 3.5rem;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        p {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <i class="bx message-square-check"></i>
+        <h2 class="heading"><span>Form Submitted Successfully!</span></h2>
+        <p>Thank you! The form has been submitted successfully. We will reply to you soon!</p>
+        <a href="/index.html" class="btn">Go back</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
