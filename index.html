@@ -556,19 +556,19 @@
   </section>
   <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me</span></h2>
-    <form action="#">
+    <form onsubmit="sendEmail(); reset(); return false;">
       <div class="input-group">
         <div class="input-box">
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
+          <input type="text" id="name" placeholder="Name">
+          <input type="email" id="email" placeholder="Email">
         </div>
         <div class="input-box">
-          <input type="number" placeholder="Phone Number">
-          <input type="text" placeholder="Subject">
+          <input type="number" id="number" placeholder="Phone Number">
+          <input type="text" id="subject" placeholder="Subject">
         </div>
       </div>
       <div class="input-group-2">
-        <textarea name="" id="" placeholder="Your Message" cols="30" rows="10"></textarea>
+        <textarea name="" id="message" placeholder="Your Message" cols="30" rows="10"></textarea>
         <input type="submit" value="Send Message" class="btn">
       </div>
     </form>
@@ -607,6 +607,7 @@
     </p>
   </div>
   <script src="script.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>

@@ -413,9 +413,9 @@ section {
 
 .portfolio-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 5fr));
   place-items: center;
-  gap: 3rem;
+  gap: 4rem;
   row-gap: 5rem;
 }
 
@@ -459,6 +459,9 @@ section {
 .portfolio-filter {
   display: flex;
   margin-bottom: 2rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .filter-btn {
