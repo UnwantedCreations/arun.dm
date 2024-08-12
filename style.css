@@ -510,6 +510,9 @@ section {
   border: none;
   text-wrap: nowrap;
 }
+.button-center {
+  text-align: center;
+}
 
 .experience {
   padding: 100px 15px;
