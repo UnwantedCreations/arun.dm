@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const portfolioItems = document.querySelectorAll('.portfolio-card');
   const filterBtns = document.querySelectorAll('.filter-btn');
   let currentCategory = 'all';
-  let visibleItems = 8;
+  let visibleItems = 9;
 
   function filterItems(category) {
     let itemsCount = 0;
@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.dataset.filter;
-      visibleItems = 8;
+      visibleItems = 9;
       filterItems(currentCategory);
     });
   });
 
   loadMoreBtn.addEventListener('click', function () {
-    visibleItems += 8;
+    visibleItems += 9;
     filterItems(currentCategory);
   });
 
