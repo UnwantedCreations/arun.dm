@@ -58,10 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
     filterItems(currentCategory);
   });
 
-  // Initial filter
   filterItems('all');
 
-  // Debug: Log classes of all portfolio items
   console.log('Portfolio item classes:');
   portfolioItems.forEach(item => console.log(item.className));
 });
