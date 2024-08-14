@@ -770,13 +770,15 @@ section {
 @media (max-width:1285px) {
   #menu-icon {
     display: block;
+    position: fixed;
+    right: 10%;
   }
 
   .navbar {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 50%;
+    width: 45%;
     padding: 1rem 3rem;
     background: rgba(0, 0, 0, 0.8);
     border-bottom-left-radius: 2rem;
