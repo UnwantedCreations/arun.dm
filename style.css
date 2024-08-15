@@ -8,10 +8,54 @@
 }
 
 :root {
+  --bg-color: #ffffff;
+  --second-bg-color: #f0f0f0;
+  --text-color: rgb(0, 0, 0);
+  --main-color: #00a2ff;
+  --gradient-colorf: #00a2ff;
+  --gradient-colors: #0026ff;
+  --skill-bar-bg-color: #000000;
+  --skill-bar-color: #000000;
+  --header-bg: rgba(255, 255, 255, 0.3);
+
+}
+
+.light-theme {
+  --bg-color: #ffffff;
+  --second-bg-color: #f0f0f0;
+  --text-color: rgb(0, 0, 0);
+  --main-color: #00a2ff;
+  --gradient-colorf: #00a2ff;
+  --gradient-colors: #0026ff;
+  --skill-bar-bg-color: #000000;
+  --skill-bar-color: #000000;
+  --header-bg: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme {
   --bg-color: #080808;
   --second-bg-color: #101010;
   --text-color: white;
   --main-color: #ea580c;
+  --gradient-colorf: #df8908;
+  --gradient-colors: #ff1d15;
+  --skill-bar-bg-color: white;
+  --skill-bar-color: white;
+  --header-bg: rgba(0, 0, 0, 0.3);
+}
+.theme-toggle {
+  position: fixed; /* Fixed positioning ensures the button stays in place */
+  bottom: 20px; /* 20px from the bottom of the viewport */
+  right: 20px;  /* 20px from the right of the viewport */
+  padding: 10px 15px;
+  background-color: #333; /* Dark color for better visibility */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000; /* Ensures the button stays on top of other content */
+  transition: background-color 0.3s ease;
 }
 
 html {
@@ -30,7 +74,7 @@ body {
   top: 0;
   left: 0;
   padding: 2rem 15%;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -58,8 +102,8 @@ body {
 
 span {
   background: linear-gradient(270deg,
-      #df8908 10%,
-      #ff1d15 100%);
+      var(--gradient-colorf) 10%,
+      var(--gradient-colors) 100%);
   background-clip: text;
   color: transparent;
   text-wrap: nowrap;
@@ -137,8 +181,8 @@ span {
   padding: 1rem 2rem;
   border-radius: 3rem;
   background: linear-gradient(270deg,
-      #df8908 10%,
-      #ff1d15 100%);
+      var(--gradient-colorf) 10%,
+      var(--gradient-colors) 100%);
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -233,6 +277,7 @@ section {
 
 .btn {
   display: inline-block;
+  margin: 1.5rem 0;
   padding: 1rem 3rem;
   background-color: var(--main-color);
   box-shadow: 0 0 25px var(--main-color);
@@ -251,7 +296,7 @@ section {
 }
 
 .btn-group a:nth-of-type(2) {
-  background-color: black;
+  background-color: var(--bg-color);
   color: var(--main-color);
   border: 2px solid var(--main-color);
   box-shadow: 0 0 25px transparent;
@@ -370,7 +415,7 @@ section {
 .skill-bars .bar .progress-line {
   height: 10px;
   width: 100%;
-  background: white;
+  background: var(--skill-bar-bg-color);
   position: relative;
   border-radius: 10px;
 }
@@ -378,7 +423,7 @@ section {
   height: 100%;
   position: absolute;
   border-radius: 10px;
-  background: white;
+  background: var(--skill-bar-color);
   cursor: pointer;
 }
 .bar .progress-line.smm span{
@@ -516,8 +561,8 @@ section {
   padding: 2rem 3%;
   border-radius: 3rem;
   background: linear-gradient(270deg,
-      #df8908 10%,
-      #ff1d15 100%);
+  var(--gradient-colorf) 10%,
+  var(--gradient-colors) 100%);
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -681,21 +726,21 @@ section {
 
 .timeline-content h3 {
   font-size: 20px;
-  color: white;
+  color: var(--text-color);
   margin: 0 0 10px;
   font-weight: 500;
 }
 .timeline-content h4 {
   font-size: 14px;
-  color: white;
+  color: var(--text-color);
   margin: 0 0 10px;
   font-weight: 400;
 }
 
 .timeline-content p {
-  color: white;
+  color: var(--text-color);
   font-size: 12px;
-  font-weight: 250;
+  font-weight: 300;
   line-height: 22px;
 }
 
@@ -752,7 +797,7 @@ section {
 }
 
 .footer ul li a {
-  color: white;
+  color: var(--text-color);
   border-bottom: 3px solid transparent;
   transition: 0.3s ease-in-out;
 }
@@ -765,6 +810,35 @@ section {
   text-align: center;
   margin-top: 40px;
   font-size: 16px;
+}
+
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 0 0 #0004;
+  animation: l2 1.5s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #0004;
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+.loader:after {
+  animation-delay: -1s;
+}
+@keyframes l2 {
+  100% {box-shadow: 0 0 0 40px #0000}
 }
 
 @media (max-width:1285px) {

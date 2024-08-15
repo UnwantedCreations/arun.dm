@@ -100,10 +100,14 @@
           }
         }
         </script>
-        <script src="/assets/particles/particles.min.js"></script>
+  <script src="/assets/particles/particles.min.js"></script>
 </head>
 
 <body>
+<div class="loader"></div>
+
+<div id="main-content" style="display: none;">
+  <!-- Your website content goes here -->
   <header class="header">
     <a href="#home" class="logo"> Arun <span>DM</span>
     </a>
@@ -141,14 +145,14 @@
         <a href="#contact" class="btn">Contact</a>
       </div>
     </div>
-    <div class="home-img">
-      <img src="arun.jpg" alt="">
-    </div>
+      <div class="home-img">
+        <img id="theme-image-1" src="arun-blue.jpg" data-light-src="arun-blue.jpg" data-dark-src="arun.jpg" alt="Image 1">
+      </div>
     <div id="particles-js"></div>
   </section>
   <section class="about" id="about">
     <div class="about-img">
-      <img src="arun-2.jpg" alt="">
+      <img id="theme-image-2" src="arun-2-blue.jpg" data-light-src="arun-2-blue.jpg" data-dark-src="arun-2.jpg" alt="Image 2">
     </div>
     <div class="about-content">
       <h2>About <span>Me</span></h2>
@@ -157,6 +161,7 @@
         of a team and individually.</p>
       <a href="#skills" class="btn">Read More</a>
     </div>
+    <button id="theme-toggle" class="theme-toggle">Switch Theme</button>
   </section>
 
   <section class="skills" id="skills">
@@ -456,23 +461,23 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">2023 - 2024</div>
-          <div class="timeline-content">
-            <h3>Jinu's Academy, Alappuzha</h3>
-            <h4>Digital Marketing Manager</h4>
-            <p>Worked as a Digital Marketing Manager for one year, successfully executing lead generation, branding
-              initiatives, and data analytics while managing a team. Consistently delivered exceptional ROI through
-              effective team leadership and strategic planning.</p>
-          </div>
+        <div class="timeline-content">
+          <h3>Jinu's Academy, Alappuzha</h3>
+          <h4>Digital Marketing Manager</h4>
+          <p>Worked as a Digital Marketing Manager for one year, successfully executing lead generation, branding
+            initiatives, and data analytics while managing a team. Consistently delivered exceptional ROI through
+            effective team leadership and strategic planning.</p>
+        </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">2021 - 2022</div>
-          <div class="timeline-content">
-            <h3>Byteblaze Digital Marketing</h3>
-            <h4>Freelance Marketing & Developer</h4>
-            <p>1 year of proven expertise in creating and executing result-driven online marketing strategies, managing
-              social media campaigns, and driving increased brand visibility and engagement for 30+ clients.</p>
-          </div>
+        <div class="timeline-content">
+          <h3>Byteblaze Digital Marketing</h3>
+          <h4>Freelance Marketing & Developer</h4>
+          <p>1 year of proven expertise in creating and executing result-driven online marketing strategies, managing
+            social media campaigns, and driving increased brand visibility and engagement for 30+ clients.</p>
+        </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
@@ -554,29 +559,29 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3>AI-Powered Digital Marketer Certification</h3>
-            <p>I received the Semrush Academy Certificate for "Become an AI-Powered Digital Marketer" in 2024. This
-              certification recognized my proficiency in leveraging AI tools and techniques for digital marketing.</p>
-          </div>
+        <div class="timeline-content">
+          <h3>AI-Powered Digital Marketer Certification</h3>
+          <p>I received the Semrush Academy Certificate for "Become an AI-Powered Digital Marketer" in 2024. This
+            certification recognized my proficiency in leveraging AI tools and techniques for digital marketing.</p>
+        </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3>Technical SEO Certification</h3>
-            <p>I earned the Semrush Academy Certificate for the "Technical SEO Course" in 2024. This certification
-              demonstrated my expertise in technical SEO practices and strategies.</p>
-          </div>
+        <div class="timeline-content">
+          <h3>Technical SEO Certification</h3>
+          <p>I earned the Semrush Academy Certificate for the "Technical SEO Course" in 2024. This certification
+            demonstrated my expertise in technical SEO practices and strategies.</p>
+        </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">2022</div>
-          <div class="timeline-content">
-            <h3>Google Ads Certification</h3>
-            <p>I earned the "Google Ads Certification" from Google in 2022. This certification validated my expertise in
-              Google Ads and online advertising strategies.</p>
-          </div>
+        <div class="timeline-content">
+          <h3>Google Ads Certification</h3>
+          <p>I earned the "Google Ads Certification" from Google in 2022. This certification validated my expertise in
+            Google Ads and online advertising strategies.</p>
+        </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
@@ -675,6 +680,7 @@
   </div>
   <script src="script.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
+</div>
 </body>
 
 </html>
