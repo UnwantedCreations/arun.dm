@@ -854,7 +854,7 @@ section {
     right: 0;
     width: 45%;
     padding: 1rem 3rem;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--header-bg);
     border-bottom-left-radius: 2rem;
     border-left: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
