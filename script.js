@@ -1,4 +1,3 @@
-// Menu icon functionality
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -6,6 +5,13 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle('bx-x');
   navbar.classList.toggle('active');
 };
+
+document.addEventListener('click', (e) => {
+  if (e.target !== menuIcon && e.target !== navbar && navbar.classList.contains('active')) {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+  }
+});
 
 // Function to initialize particles with the correct color based on theme
 function initializeParticles() {
