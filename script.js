@@ -104,11 +104,9 @@ function applyThemeBasedOnPreference() {
 // Initialize theme, particles, and images on page load
 document.addEventListener('DOMContentLoaded', function() {
   applyThemeBasedOnPreference();
-
-  const toggleButton = document.getElementById('theme-toggle');
-
+  const toggleButton = document.getElementById('slider');
   // Toggle theme on button click
-  toggleButton.addEventListener('click', function() {
+  toggleButton.addEventListener('change', function() {
     if (document.body.classList.contains('dark-theme')) {
       document.body.classList.remove('dark-theme');
       document.body.classList.add('light-theme');
@@ -118,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.add('dark-theme');
       localStorage.setItem('theme', 'dark');
     }
-
     initializeParticles();
     updateThemeImages();
   });

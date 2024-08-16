@@ -43,20 +43,6 @@
   --skill-bar-color: white;
   --header-bg: rgba(0, 0, 0, 0.3);
 }
-.theme-toggle {
-  position: fixed; /* Fixed positioning ensures the button stays in place */
-  bottom: 20px; /* 20px from the bottom of the viewport */
-  right: 20px;  /* 20px from the right of the viewport */
-  padding: 10px 15px;
-  background-color: #333; /* Dark color for better visibility */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  z-index: 1000; /* Ensures the button stays on top of other content */
-  transition: background-color 0.3s ease;
-}
 
 html {
   font-size: 60%;
@@ -318,6 +304,60 @@ section {
   z-index: 1;
   pointer-events: auto;
 }
+
+.switch {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 30px;
+  height: 54px;
+  z-index: 1000;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 35px;
+  width: 35px;
+  left: 0px;
+  bottom: 0px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url('assets/images/theme-ico/night.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .slider:before {
+  transform: translateX(0px);
+  background: white url('assets/images/theme-ico/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
 
 .about {
   display: flex;
