@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KF15SVJNLL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KF15SVJNLL');
+</script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Digital Marketing Tools - Arun</title>
+  <meta name="description" content="Tools for all of your Digital Marketing needs." />
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Digital Marketing Tools - Arun" />
+  <meta property="og:image" content="https://arundm.in/assets/img/tools.png" />
+  <meta property="og:image:secure_url" content="https://arundm.in/assets/img/tools.png" />
+  <meta property="og:site_name" content="Arun" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:image:alt" content="Digital Marketing Tools - Arun" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Digital Marketing Tools - Arun" />
+  <meta name="twitter:description" content="Digital Marketing Tools - Arun" />
+  <meta name="twitter:label1" content="Written by" />
+  <meta name="twitter:data1" content="Arun" />
+  <meta name="twitter:label2" content="Time to read" />
+  <meta name="twitter:data2" content="5 minutes" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+    <title>Link to HTML Converter</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        .output textarea {
+            white-space: pre-wrap;
+            /* Maintain formatting */
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .input-group .form-group {
+            flex: 1;
+            margin: 10px;
+            max-width: 100%;
+        }
+
+        .form-check-inline,
+        .btn,
+        .output {
+            display: block;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .form-check {
+            display: inline-block;
+        }
+
+        .btn-convert {
+            width: 30%;
+        }
+        .btn-reset {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <h1>Digital Marketing Tools - Arun</h1><br>
+        <h2>URL to HTML Hyperink with keywords</h2><br>
+        <p>If you have a list of URLs and list of keywords, so you can easily convert those URLs to HTML hyperlinks with keywords using this online tool.</p>
+
+        <div class="input-group justify-content-center">
+            <div class="form-group">
+                <label for="links">Links (one per line):</label>
+                <textarea class="form-control" id="links" rows="10"
+                    placeholder="Enter each link on a new line"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="keywords">Keywords (one per line, optional):</label>
+                <textarea class="form-control" id="keywords" rows="10"
+                    placeholder="Enter each keyword on a new line, matching the order of the links (optional)"></textarea>
+            </div>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="repeatKeywords" checked>
+            <label class="form-check-label" for="repeatKeywords">Repeat keywords if fewer than links</label>
+        </div><br>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="outputType" id="outputHTML" value="html" checked>
+            <label class="form-check-label" for="outputHTML">HTML</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="outputType" id="outputBBCode" value="bbcode">
+            <label class="form-check-label" for="outputBBCode">BBCode</label>
+        </div>
+
+        <div class="form-group output">
+            <button class="btn btn-primary btn-convert" onclick="convertLinks()">Convert</button>
+            <button class="btn btn-secondary btn-reset" onclick="resetFields()">Reset</button>
+            <label for="output">Output:</label>
+            <textarea class="form-control" id="output" rows="10" readonly></textarea>
+        </div>
+
+
+        <button class="btn btn-secondary" onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+
+    <script>
+        function convertLinks() {
+            const links = document.getElementById('links').value.split('\n').map(link => link.trim()).filter(link => link);
+            const keywords = document.getElementById('keywords').value.split('\n').map(keyword => keyword.trim());
+            const repeatKeywords = document.getElementById('repeatKeywords').checked;
+            const outputType = document.querySelector('input[name="outputType"]:checked').value;
+            const output = document.getElementById('output');
+
+            let htmlOutput = '';
+
+            for (let i = 0; i < links.length; i++) {
+                const link = links[i];
+                let keyword = keywords[i] ? keywords[i] : '';
+                if (repeatKeywords && !keyword) {
+                    keyword = keywords[i % keywords.length];
+                }
+                if (link) {
+                    if (outputType === 'html') {
+                        htmlOutput += `<a href="${link}">${keyword}</a>\n`;
+                    } else {
+                        htmlOutput += `[url=${link}]${keyword}[/url]\n`;
+                    }
+                }
+            }
+
+            output.value = htmlOutput;
+        }
+
+        function resetFields() {
+            document.getElementById('links').value = '';
+            document.getElementById('keywords').value = '';
+            document.getElementById('repeatKeywords').checked = false;
+            document.getElementById('outputHTML').checked = true;
+            document.getElementById('output').value = '';
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output');
+            output.select();
+            document.execCommand('copy');
+        }
+    </script>
+
+
+    <script src="assets/vendor/bootstrap/js/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
