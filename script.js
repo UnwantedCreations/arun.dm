@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
   window.addEventListener("load", function() {
+    setTimeout(initializeParticles, 100);
     document.querySelector(".loader").style.display = "none";
     document.getElementById("main-content").style.display = "block";
   });
