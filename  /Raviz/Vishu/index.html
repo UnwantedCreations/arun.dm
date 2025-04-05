@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishu Sadhya 2025 - The Raviz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Serif Malayalam', serif;
+      background-color: #fff8e1;
+      color: #4e342e;
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.5em;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .highlight {
+      background-color: #ffecb3;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    form {
+      background-color: #fff3e0;
+      padding: 30px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #ffc107;
+      color: #4e342e;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ffb300;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .call-btn {
+      background-color: #4caf50;
+    }
+    .whatsapp-btn {
+      background-color: #25d366;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffecb3;
+      color: #4e342e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay muted loop playsinline>
+      <source src="/vishu-2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Celebrate Vishu with The Raviz</h1>
+    <p>Experience the traditional Aranmula Style Vishu Sadhya with over 40 delightful dishes</p>
+  </header>
+
+  <section>
+    <div class="highlight">
+      <h2>Aranmula Style Vishu Sadhya Highlights</h2>
+      <p>Enjoy a grand vegetarian feast with 40+ authentic dishes including Avial, Kaalan, Olan, Erissery, Puliserry, Parippu, Sambhar, Rasam, Mango Pickle, Sharkara Varatti, Upperi, Pachadi, Kichadi, Inji Puli, Payasam varieties and more—served on a traditional banana leaf just like in Aranmula.</p>
+    </div>
+
+    <div class="contact-buttons">
+      <a href="tel:+919995266344" class="call-btn">📞 Call to Book</a>
+      <a href="https://api.whatsapp.com/send?phone=919995266344&text=I%20would%20like%20to%20book%20the%20vishu%20sadhya%20at%20The%20Raviz" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="highlight">
+      <h2>Reserve Your Sadhya Now</h2>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLScaLJHA0dzTwlq-1WKFk3HqAWW77O1wiz3xijCRkim7cNAZtQ/formResponse" method="POST" target="_blank">
+        <label for="name">Full Name</label>
+        <input type="text" name="entry.1322919825" id="name" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="entry.2000048387" id="phone" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" name="entry.2097324922" id="email" required />
+
+        <label for="hotel">Choose Your Location</label>
+        <select name="entry.1365993526" id="hotel" required>
+          <option value="">-- Select Hotel --</option>
+          <option value="The Raviz Kadavu">The Raviz Kadavu</option>
+          <option value="The Raviz Calicut">The Raviz Calicut</option>
+        </select>
+
+        <label for="type">Order Type</label>
+        <select name="entry.1361241633" id="type" required>
+          <option value="">-- Select Option --</option>
+          <option value="Walk-In">Walk-In</option>
+          <option value="Home Delivery">Home Delivery</option>
+        </select>
+
+        <label for="message">Additional Notes</label>
+        <textarea name="entry.1651965187" id="message" rows="4"></textarea>
+
+        <button type="submit">Submit Reservation</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The Raviz Hotels and Resorts | Vishu Sadhya Special</p>
+  </footer>
+</body>
+</html>
