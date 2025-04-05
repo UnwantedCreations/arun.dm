@@ -134,71 +134,54 @@
   <section>
     <div class="highlight">
       <h2>Reserve Your Sadhya Now</h2>
-      <form id="sadhya-form">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required />
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" />
-
-        <label for="hotel">Choose Your Location</label>
-        <select id="hotel" name="hotel" required>
-          <option value="">-- Select Hotel --</option>
+      <form id="sadhyaForm">
+        <input type="text" name="name" placeholder="Full Name" required><br><br>
+        <input type="tel" name="phone" placeholder="Phone Number" required><br><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
+        <select name="hotel" required>
+          <option value="">Select Hotel</option>
           <option value="kadavu">The Raviz Kadavu</option>
           <option value="calicut">The Raviz Calicut</option>
-        </select>
-
-        <label for="type">Order Type</label>
-        <select id="type" name="type" required>
-          <option value="">-- Select Option --</option>
+        </select><br><br>
+        <select name="type" required>
+          <option value="">Order Type</option>
           <option value="walkin">Walk-In</option>
           <option value="delivery">Home Delivery</option>
-        </select>
-
-        <label for="message">Additional Notes</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit">Submit Reservation</button>
+        </select><br><br>
+        <textarea name="message" placeholder="Additional Notes"></textarea><br><br>
+        <button type="submit">Submit</button>
       </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 The Raviz Hotels and Resorts | Vishu Sadhya Special</p>
-  </footer>
-
-  <script>
-    document.getElementById("sadhya-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const formData = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        hotel: document.getElementById("hotel").value,
-        type: document.getElementById("type").value,
-        message: document.getElementById("message").value
-      };
-
-      fetch("https://script.google.com/macros/s/AKfycbyzQVSWMHDzS_qjfKw1Kdu2M0BHCbIQazI3ma_i6XRF7LDEvsghnyot61mQOBPiq4FL/exec", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      .then(response => response.text())
-      .then(result => {
-        alert("Reservation submitted successfully!");
-        document.getElementById("sadhya-form").reset();
-      })
-      .catch(error => {
-        alert("There was an error: " + error.message);
-      });
-    });
-  </script>
+    
+      <p id="responseMessage"></p>
+    
+      <script>
+        document.getElementById("sadhyaForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+    
+          const formData = new FormData(this);
+          const data = Object.fromEntries(formData.entries());
+    
+          fetch("YOUR_WEB_APP_URL_HERE", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+          })
+          .then(res => res.json())
+          .then(response => {
+            if (response.result === "success") {
+              document.getElementById("responseMessage").textContent = "Reservation submitted successfully!";
+              document.getElementById("sadhyaForm").reset();
+            } else {
+              document.getElementById("responseMessage").textContent = "Error: " + response.message;
+            }
+          })
+          .catch(error => {
+            document.getElementById("responseMessage").textContent = "There was an error: " + error;
+          });
+        });
+      </script>
 </body>
 </html>
