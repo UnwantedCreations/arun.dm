@@ -13,6 +13,26 @@
       background-color: #fff8e1;
       color: #4e342e;
     }
+
+    /* Konna Poovu Breeze Effect */
+    .konna-poovu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 160px;
+      z-index: 10;
+      animation: sway 4s ease-in-out infinite;
+      transform-origin: top center;
+    }
+
+    @keyframes sway {
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(2deg); }
+      50%  { transform: rotate(0deg); }
+      75%  { transform: rotate(-2deg); }
+      100% { transform: rotate(0deg); }
+    }
+
     header {
       position: relative;
       height: 100vh;
@@ -111,6 +131,8 @@
   </style>
 </head>
 <body>
+  <img src="konnapoovu.png" alt="Konna Poovu" class="konna-poovu">
+
   <header>
     <video autoplay muted loop playsinline>
       <source src="/Vishu/vishu-2.mp4" type="video/mp4">
