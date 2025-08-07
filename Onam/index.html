@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Grand Onam Getaway - The Raviz Hotels & Resorts</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Define brand color palette and fonts */
+        :root {
+            --raviz-gold: #b99866;
+            --raviz-blue: #1b2c52;
+            --raviz-white: #ffffff;
+            --raviz-light-gray: #f8f9fa;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: #333;
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: var(--font-serif);
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            background: linear-gradient(rgba(27, 44, 82, 0.6), rgba(27, 44, 82, 0.6)), url('./onam.png') no-repeat left bottom;
+            background-size: cover;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--raviz-white);
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--raviz-gold);
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        /* Custom Button Styling */
+        .btn-raviz {
+            background-color: var(--raviz-gold);
+            border-color: var(--raviz-gold);
+            color: var(--raviz-white);
+            padding: 0.75rem 1.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-raviz:hover, .btn-raviz:focus {
+            background-color: #a5885c;
+            border-color: #a5885c;
+            color: var(--raviz-white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Section Styling */
+        .section-title {
+            color: var(--raviz-blue);
+            margin-bottom: 3rem;
+        }
+
+        .package-icon {
+            font-size: 3rem;
+            color: var(--raviz-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .package-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        /* Form Section Styling */
+        #enquiry-form-section {
+            background-color: var(--raviz-light-gray);
+        }
+
+        .form-control:focus {
+            border-color: var(--raviz-gold);
+            box-shadow: 0 0 0 0.25rem rgba(185, 152, 102, 0.25);
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: var(--raviz-blue);
+            color: var(--raviz-white);
+        }
+
+        footer .raviz-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--raviz-gold);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        footer .social-links a {
+            color: var(--raviz-white);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        footer .social-links a:hover {
+            color: var(--raviz-gold);
+        }
+
+        /* Animation for fade-in effect */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .hero-section h1 {
+                font-size: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="fade-in-section">A Grand Onam Getaway</h1>
+            <p class="lead fade-in-section" style="transition-delay: 200ms;">
+                Celebrate Onam with luxury and tradition at The Raviz Hotels & Resorts
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Package Overview Section -->
+        <section id="package-overview" class="py-5">
+            <div class="container text-center py-5">
+                <h2 class="section-title fade-in-section">Your Luxurious Onam Experience</h2>
+                <div class="row g-4 justify-content-center">
+                    <!-- Card 1: Welcome -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="transition-delay: 100ms;">
+                        <div class="card package-card p-4 text-center border-0 shadow-sm w-100">
+                            <div class="card-body">
+                                <i class="bi bi-flower1 package-icon"></i>
+                                <h3 class="h5 font-serif">A Grand Welcome</h3>
+                                <p class="card-text text-muted">Begin your festivities with a traditional welcome, embracing the authentic flavors and warmth of Onam.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: Stay -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="transition-delay: 200ms;">
+                        <div class="card package-card p-4 text-center border-0 shadow-sm w-100">
+                            <div class="card-body">
+                                <i class="bi bi-moon-stars package-icon"></i>
+                                <h3 class="h5 font-serif">Luxurious Stay</h3>
+                                <p class="card-text text-muted">Unwind in our exquisitely designed rooms and suites, offering unparalleled comfort and elegance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: Food -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="transition-delay: 300ms;">
+                        <div class="card package-card p-4 text-center border-0 shadow-sm w-100">
+                            <div class="card-body">
+                                <i class="bi bi-egg-fried package-icon"></i>
+                                <h3 class="h5 font-serif">Grand Onam Sadya</h3>
+                                <p class="card-text text-muted">Indulge in a magnificent Onam Sadya, a culinary masterpiece featuring a lavish spread of delicacies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4: Activities -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch fade-in-section" style="transition-delay: 400ms;">
+                        <div class="card package-card p-4 text-center border-0 shadow-sm w-100">
+                            <div class="card-body">
+                                <i class="bi bi-music-note-beamed package-icon"></i>
+                                <h3 class="h5 font-serif">Festive Activities</h3>
+                                <p class="card-text text-muted">Immerse yourself in culture with Pookalam, Thiruvathira performances, and other traditional festivities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 fade-in-section" style="transition-delay: 500ms;">
+                    <a href="#enquiry-form-section" class="btn btn-raviz">Book Your Getaway</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Capture Form Section -->
+        <section id="enquiry-form-section" class="py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title fade-in-section">Reserve Your Celebration</h2>
+                        <p class="lead mb-4 text-muted fade-in-section">Fill out the form below, and our concierge will contact you to finalize your booking and tailor your Onam experience.</p>
+                        
+                        <!-- Form -->
+                        <form id="onam-enquiry-form" class="fade-in-section" style="transition-delay: 200ms;">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="fullName" placeholder="Your Name" required>
+                                        <label for="fullName">Full Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" required>
+                                        <label for="phoneNumber">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="hotelSelection" required>
+                                            <option selected disabled value="">Choose your destination...</option>
+                                            <option value="The Raviz Kadavu">The Raviz Kadavu</option>
+                                            <option value="The Raviz Calicut">The Raviz Calicut</option>
+                                        </select>
+                                        <label for="hotelSelection">Desired Hotel</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-raviz mt-4">Enquire Now</button>
+                        </form>
+                        <!-- Success Message -->
+                        <div id="form-success-message" class="alert alert-success mt-4 d-none" role="alert">
+                            Thank you for your enquiry! Our team will be in touch with you shortly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <a href="#" class="raviz-logo">The Raviz</a>
+            <p class="mb-2 mt-2 text-white-50">The Raviz Hotels & Resorts</p>
+            <p class="mb-2 text-white-50">Contact: +91 495 241 1111 | reservations@theraviz.com</p>
+            <div class="social-links mt-3">
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Fade-in animation on scroll ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Smooth scroll for anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // --- Form submission handling ---
+            const form = document.getElementById('onam-enquiry-form');
+            const successMessage = document.getElementById('form-success-message');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                // Get form data
+                const formData = {
+                    name: document.getElementById('fullName').value,
+                    phone: document.getElementById('phoneNumber').value,
+                    hotel: document.getElementById('hotelSelection').value
+                };
+
+                // For demonstration: log data to console
+                // In a real application, you would send this data to a server or a service like Google Forms.
+                console.log('Form Submitted. Data:', formData);
+
+                // Show success message and hide form
+                form.classList.add('d-none');
+                successMessage.classList.remove('d-none');
+                
+                // Optional: reset form after a delay
+                setTimeout(() => {
+                    form.reset();
+                    form.classList.remove('d-none');
+                    successMessage.classList.add('d-none');
+                }, 5000); // Reset after 5 seconds
+            });
+
+        });
+    </script>
+</body>
+</html>
